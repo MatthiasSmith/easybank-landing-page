@@ -1,5 +1,11 @@
 import Head from 'next/head';
 
+import Header from '../components/header/header';
+import Hero from '../components/hero';
+import LatestArticles from '../components/latest-articles';
+import WhyChoose from '../components/why-choose';
+import Footer from '../components/footer';
+
 export default function Home() {
   return (
     <div>
@@ -11,7 +17,13 @@ export default function Home() {
         />
         <link rel='icon' href='/images/favicon-32x32.png' />
       </Head>
-      <main>Hi</main>
+      <Header />
+      <main className='relative bg-very-light-gray'>
+        <Hero />
+        <WhyChoose />
+        <LatestArticles />
+        <Footer />
+      </main>
     </div>
   );
 }

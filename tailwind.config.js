@@ -15,6 +15,15 @@ module.exports = {
         'very-light-gray': 'hsl(0, 0%, 98%)',
         white: 'hsl(0, 0%, 100%)',
       },
+      fontSize: {
+        'article-heading': ['1rem', '1.25rem'],
+        'article-text': ['0.795rem', '1.15rem'],
+        'very-xs': ['0.65rem', '0.85rem'],
+        xs: ['0.875rem', '1.25rem'],
+        sm: ['0.9375rem', '1.55rem'],
+        h1: ['2.5rem', '3.25rem'],
+        h2: ['2rem', '2.35rem'],
+      },
     },
     fontFamily: {
       sans: ['"Public Sans"', 'sans-serif'],
