@@ -1,7 +1,7 @@
 const FooterNav = () => {
   return (
-    <nav className='mt-6'>
-      <ul className='flex flex-col items-center font-light text-white text-sm'>
+    <nav className='mt-6 md:flex md:mt-0 md:flex-1'>
+      <ul className='flex flex-col items-center font-light text-white whitespace-nowrap text-sm md:ml-14 md:items-start lg:ml-28'>
         <li>
           <a href='#'>About Us</a>
         </li>
@@ -11,7 +11,9 @@ const FooterNav = () => {
         <li className='mt-2'>
           <a href='#'>Blog</a>
         </li>
-        <li className='mt-2'>
+      </ul>
+      <ul className='flex flex-col items-center font-light text-white whitespace-nowrap text-sm md:ml-14 md:items-start lg:ml-28'>
+        <li className='mt-2 md:mt-0'>
           <a href='#'>Careers</a>
         </li>
         <li className='mt-2'>
@@ -19,14 +21,6 @@ const FooterNav = () => {
         </li>
         <li className='mt-2'>
           <a href='#'>Privacy Policy</a>
-        </li>
-        <li className='mt-10'>
-          <a
-            href='#'
-            className='bg-gradient-to-r from-lime-green to-bright-cyan text-white rounded-full py-3 px-8 font-normal'
-          >
-            Request Invite
-          </a>
         </li>
       </ul>
     </nav>

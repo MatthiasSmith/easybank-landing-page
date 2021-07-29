@@ -10,12 +10,14 @@ const Feature = ({
   text: string;
 }) => {
   return (
-    <article className='flex flex-col items-center'>
+    <article className='flex flex-col items-center lg:items-start'>
       <Image layout='fixed' src={imageSrc} height='72' width='72' alt='' />
-      <h3 className='text-xl text-center text-dark-blue font-light mt-5'>
+      <h3 className='text-xl text-center text-dark-blue font-light mt-5 lg:mt-7'>
         {title}
       </h3>
-      <p className='text-sm text-center text-grayish-blue mt-4'>{text}</p>
+      <p className='text-sm text-center text-grayish-blue mt-4 lg:text-left lg:mt-5'>
+        {text}
+      </p>
     </article>
   );
 };

@@ -22,7 +22,11 @@ module.exports = {
         xs: ['0.875rem', '1.25rem'],
         sm: ['0.9375rem', '1.55rem'],
         h1: ['2.5rem', '3.25rem'],
+        'lg-h1': ['2.75rem', '3.5rem'],
         h2: ['2rem', '2.35rem'],
+      },
+      maxWidth: {
+        'screen-lg': '72.375rem',
       },
     },
     fontFamily: {

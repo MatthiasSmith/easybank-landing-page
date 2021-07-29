@@ -18,7 +18,7 @@ export default function Home() {
         <link rel='icon' href='/images/favicon-32x32.png' />
       </Head>
       <Header />
-      <main className='relative bg-very-light-gray'>
+      <main className='relative bg-very-light-gray max-w-full overflow-x-hidden'>
         <Hero />
         <WhyChoose />
         <LatestArticles />
