@@ -11,7 +11,6 @@ This is a solution to the [Easybank landing page challenge on Frontend Mentor](h
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
 
@@ -26,12 +25,12 @@ Users should be able to:
 
 ### Screenshot
 
-<!-- ![](./screenshot.jpg) -->
+![](./screenshots/easybank-landing-page.jpg)
 
 ### Links
 
-<!-- - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com) -->
+<!-- - Solution URL: [Add solution URL here](https://your-solution-url.com) -->
+- Live Site URL: [Easybank Landing Page](https://easybank-landing-page-matthiassmith.vercel.app)
 
 ## My process
 
@@ -43,12 +42,13 @@ Users should be able to:
 - [React](https://reactjs.org/) - JS library
 - [Next.js](https://nextjs.org/) - React framework
 - [Tailwind](https://tailwindcss.com/) - For styles
+- [styled-jsx](https://github.com/vercel/styled-jsx) - For other styles
 
 ### What I learned
 
-### Continued development
+For this landing page, the challenge for myself was to do it fast. To keep my process quick, I decided to continue using NextJS and TailwindCSS mixed with some basic styled-jsx again.
 
-### Useful resources
+For me, the performance for static site generation (SSG) and development speed which NextJS makes possible, makes using it a no-brainer. And even though this is only the second project I've used TailwindCSS for, it feels almost natural to me. It's so simple to use and their documentation is so quick and easy to search, that I know I'm only seconds away from finding and implementing anything I don't know how to do.
 
 ## Author
 
