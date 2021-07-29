@@ -24,6 +24,15 @@ export default function Home() {
         <LatestArticles />
         <Footer />
       </main>
+      <style jsx global>{`
+        a:focus,
+        button:focus,
+        a:focus img,
+        a:focus svg {
+          outline-offset: 0.25rem;
+          outline: 2px dashed hsl(155, 59%, 49%);
+        }
+      `}</style>
     </div>
   );
 }
