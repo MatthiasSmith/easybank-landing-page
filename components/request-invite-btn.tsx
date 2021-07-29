@@ -10,6 +10,7 @@ const RequestInviteButton = ({ className }: { className?: String }) => {
       <style jsx>{`
         a {
           position: relative;
+          overflow: hidden;
         }
 
         a:hover::after,
