@@ -15,20 +15,20 @@ const RequestInviteButton = ({ className }: { className?: String }) => {
 
         a:hover::after,
         a:focus::after {
-          transform: scaleX(1);
+          transform: skewX(-25deg) scaleX(1);
           transform-origin: 0 50%;
         }
 
         a::after {
           position: absolute;
           content: '';
-          width: 100%;
+          width: 115%;
           height: 100%;
           top: 0;
-          left: 0;
+          left: -0.5rem;
           background: white;
           opacity: 0.28;
-          transform: scaleX(0);
+          transform: skewX(-25deg) scaleX(0);
           transform-origin: 100% 50%;
           transition: transform 250ms ease-out;
         }
