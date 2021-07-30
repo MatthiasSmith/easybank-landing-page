@@ -1,7 +1,18 @@
+import React, { useRef } from 'react';
 import Image from 'next/image';
+
 import RequestInviteButton from './request-invite-btn';
 
 const Hero = () => {
+  const headingRef = useRef<HTMLDivElement>(null);
+
+  const handleImageLoad = (event: any) => {
+    setTimeout(() => {
+      event.target.classList.add('slide');
+      headingRef?.current?.classList.add('slide');
+    }, 250);
+  };
+
   return (
     <article className='hero lg:px-6'>
       <div className='lg:flex lg:max-w-screen-lg lg:mx-auto'>
@@ -13,10 +24,15 @@ const Hero = () => {
               height='939'
               src='/images/image-mockups.png'
               alt=''
+              onLoad={handleImageLoad}
+              className='animate animate-slide-down'
             />
           </div>
         </div>
-        <div className='flex flex-col items-center pt-10 pb-20 px-6 lg:px-0 lg:max-w-lg lg:items-start lg:py-40 lg:w-2/5 lg:mr-5'>
+        <div
+          ref={headingRef}
+          className='flex flex-col items-center pt-10 pb-20 px-6 lg:px-0 lg:max-w-lg lg:items-start lg:py-40 lg:w-2/5 lg:mr-5 animate animate-slide-up'
+        >
           <h1 className='text-h1 text-center font-light text-dark-blue lg:text-lg-h1 lg:text-left lg:max-w-sm'>
             Next generation digital banking
           </h1>

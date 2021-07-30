@@ -15,7 +15,8 @@ const RequestInviteButton = ({ className }: { className?: String }) => {
 
         a:hover::after,
         a:focus::after {
-          opacity: 0.28;
+          transform: scaleX(1);
+          transform-origin: 0 50%;
         }
 
         a::after {
@@ -26,8 +27,10 @@ const RequestInviteButton = ({ className }: { className?: String }) => {
           top: 0;
           left: 0;
           background: white;
-          opacity: 0;
-          transition: opacity 300ms ease-out;
+          opacity: 0.28;
+          transform: scaleX(0);
+          transform-origin: 100% 50%;
+          transition: transform 250ms ease-out;
         }
       `}</style>
     </a>

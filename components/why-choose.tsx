@@ -1,3 +1,5 @@
+import { Scene } from 'react-scrollmagic';
+
 import Feature from './header/feature';
 
 const WhyChoose = () => {
@@ -12,40 +14,70 @@ const WhyChoose = () => {
           hub. Control your finances like never before.
         </p>
         <ul className='mt-14 sm:grid sm:grid-cols-2 sm:gap-x-5 lg:grid-cols-4 lg:gap-x-6 lg:mt-16'>
-          <li>
-            <Feature
-              imageSrc='/images/icon-online.svg'
-              title='Online Banking'
-              text='Our modern web and mobile applications allow you to keep track of your finances 
+          <Scene classToggle='slide' reverse={false} offset={-50}>
+            <li className='animate animate-slide-up'>
+              <Feature
+                imageSrc='/images/icon-online.svg'
+                title='Online Banking'
+                text='Our modern web and mobile applications allow you to keep track of your finances 
   wherever you are in the world.'
-            />
-          </li>
-          <li className='mt-9 sm:mt-0'>
-            <Feature
-              imageSrc='/images/icon-budgeting.svg'
-              title='Simple Budgeting'
-              text='See exactly where your money goes each month. Receive notifications when you’re 
+              />
+            </li>
+          </Scene>
+          <Scene classToggle='slide' reverse={false} offset={-50}>
+            <li className='mt-9 sm:mt-0 animate animate-slide-up'>
+              <Feature
+                imageSrc='/images/icon-budgeting.svg'
+                title='Simple Budgeting'
+                text='See exactly where your money goes each month. Receive notifications when you’re 
             close to hitting your limits.'
-            />
-          </li>
-          <li className='mt-9 lg:mt-0'>
-            <Feature
-              imageSrc='/images/icon-onboarding.svg'
-              title='Fast Onboarding'
-              text='We don’t do branches. Open your account in minutes online and start taking control 
+              />
+            </li>
+          </Scene>
+          <Scene classToggle='slide' reverse={false} offset={-50}>
+            <li className='mt-9 lg:mt-0 animate animate-slide-up'>
+              <Feature
+                imageSrc='/images/icon-onboarding.svg'
+                title='Fast Onboarding'
+                text='We don’t do branches. Open your account in minutes online and start taking control 
             of your finances right away.'
-            />
-          </li>
-          <li className='mt-9 lg:mt-0'>
-            <Feature
-              imageSrc='/images/icon-api.svg'
-              title='Open API'
-              text='Manage your savings, investments, pension, and much more from one account. Tracking 
+              />
+            </li>
+          </Scene>
+          <Scene classToggle='slide' reverse={false} offset={-50}>
+            <li className='mt-9 lg:mt-0 animate animate-slide-up'>
+              <Feature
+                imageSrc='/images/icon-api.svg'
+                title='Open API'
+                text='Manage your savings, investments, pension, and much more from one account. Tracking 
             your money has never been easier.'
-            />
-          </li>
+              />
+            </li>
+          </Scene>
         </ul>
       </div>
+      <style jsx>{`
+        @media screen and (min-width: 40em) {
+          .animate:nth-of-type(2),
+          .animate:nth-of-type(4) {
+            animation-delay: 150ms;
+          }
+        }
+
+        @media screen and (min-width: 64em) {
+          .animate:nth-of-type(2) {
+            animation-delay: 150ms;
+          }
+
+          .animate:nth-of-type(3) {
+            animation-delay: 300ms;
+          }
+
+          .animate:nth-of-type(4) {
+            animation-delay: 450ms;
+          }
+        }
+      `}</style>
     </article>
   );
 };
