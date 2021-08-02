@@ -30,6 +30,7 @@ const Header = () => {
           type='button'
           onClick={toggleMobileNavMenu}
           className='md:hidden'
+          title='Toggle mobile navigation menu'
         >
           {!isMobileNavOpen ? (
             <svg xmlns='http://www.w3.org/2000/svg' width='24' height='11'>
