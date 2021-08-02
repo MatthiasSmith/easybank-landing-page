@@ -3,12 +3,15 @@ import { Scene } from 'react-scrollmagic';
 import Image from 'next/image';
 
 import RequestInviteButton from './request-invite-btn';
+import useCurrentWidth from '../hooks/use-current-width';
+import { DESKTOP_BP } from '../constants/breakpoints';
 
 const Hero = () => {
   const imageContainerRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLDivElement>(null);
   const [isReducedMotion, setIsReducedMotion] = useState(false);
-  const totalYAxisMovement = -4;
+  const currentWidth = useCurrentWidth();
+  const totalYAxisMovement = -4.5;
 
   useEffect(() => {
     setIsReducedMotion(matchMedia('(prefers-reduced-motion: reduce)').matches);
@@ -16,18 +19,23 @@ const Hero = () => {
 
   const handleImageLoad = (event: any) => {
     setTimeout(() => {
+      event.target.style.animationDuration = '900ms';
       event.target.classList.add('slide');
-      headingRef?.current?.classList.add('slide');
-    }, 250);
+      if (headingRef.current) {
+        headingRef.current.style.animationDuration = '900ms';
+        headingRef?.current?.classList.add('slide');
+      }
+    }, 500);
   };
 
   return (
     <Scene duration={700} offset={-80} triggerHook='onLeave'>
       {(event: number) => {
         if (!isReducedMotion && imageContainerRef.current) {
-          imageContainerRef.current.style.transform = `translate(-50%, ${
-            totalYAxisMovement * event
-          }rem)`;
+          imageContainerRef.current.style.transform =
+            currentWidth >= DESKTOP_BP * 16
+              ? `translateY(${totalYAxisMovement * event}rem)`
+              : `translate(-50%, ${totalYAxisMovement * event}rem)`;
         }
 
         return (
@@ -83,7 +91,7 @@ const Hero = () => {
               @media screen and (min-width: 64em) {
                 .hero {
                   background-image: url('/images/bg-intro-desktop.svg');
-                  background-position: min(25rem, 28rem) -16rem;
+                  background-position: clamp(25rem, 38vw, 32rem) -16rem;
                   background-repeat: no-repeat;
                 }
 
@@ -95,18 +103,21 @@ const Hero = () => {
                 .hero__phones-image {
                   max-width: 100%;
                   bottom: -18.5rem;
-                  left: 25.75rem;
+                  left: unset;
+                  right: -6.5rem;
+                  transform: unset;
                 }
               }
 
               @media screen and (min-width: 80em) {
                 .hero {
-                  background-position: clamp(35rem, 335%, 40rem) -16rem;
+                  background-position: clamp(32rem, 42vw, 40rem) -16rem;
                 }
 
                 .hero__phones-image {
                   max-width: 46rem;
-                  left: 38.65rem;
+                  left: unset;
+                  right: -7.75rem;
                 }
               }
             `}</style>
