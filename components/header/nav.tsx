@@ -44,16 +44,17 @@ const Nav = () => {
         </li>
       </ul>
       <style jsx>{`
-        li {
+        a {
           position: relative;
         }
 
-        li:hover::after {
+        a:hover::after,
+        a:focus::after {
           transform: scaleX(1);
           transform-origin: 0 50%;
         }
 
-        li::after {
+        a::after {
           content: '';
           position: absolute;
           width: 100%;
@@ -63,7 +64,7 @@ const Nav = () => {
             hsl(136, 65%, 51%),
             hsl(192, 70%, 51%)
           );
-          bottom: -1.75rem;
+          bottom: -1.85rem;
           left: 0;
           transform: scaleX(0);
           transform-origin: 100% 50%;
